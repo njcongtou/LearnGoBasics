@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6469ab23-c833-4635-bfe7-6bf5b315faf7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/basics/slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics/maps.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basics/Pointers.go" beforeDir="false" afterPath="$PROJECT_DIR$/basics/Pointers.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build slice.go">
+  <component name="RunManager" selected="Go Build.go build maps.go">
     <configuration name="go build Pointers.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learnGo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -75,18 +74,11 @@
       <filePath value="$PROJECT_DIR$/basics/arrays.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build func.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build maps.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learnGo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/basics/func.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build loop.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="learnGo" />
-      <working_directory value="$PROJECT_DIR$/basics" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/basics/loop.go" />
+      <filePath value="$PROJECT_DIR$/basics/maps.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build slice.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -97,19 +89,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build loop.go" />
-      <item itemvalue="Go Build.go build func.go" />
       <item itemvalue="Go Build.go build Pointers.go" />
       <item itemvalue="Go Build.go build arrays.go" />
       <item itemvalue="Go Build.go build slice.go" />
+      <item itemvalue="Go Build.go build maps.go" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build maps.go" />
         <item itemvalue="Go Build.go build slice.go" />
         <item itemvalue="Go Build.go build arrays.go" />
         <item itemvalue="Go Build.go build Pointers.go" />
-        <item itemvalue="Go Build.go build func.go" />
-        <item itemvalue="Go Build.go build loop.go" />
       </list>
     </recent_temporary>
   </component>
