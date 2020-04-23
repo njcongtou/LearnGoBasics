@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6469ab23-c833-4635-bfe7-6bf5b315faf7" name="Default Changelist" comment="" />
+    <list default="true" id="6469ab23-c833-4635-bfe7-6bf5b315faf7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics/Pointers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/basics/arrays.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +22,20 @@
     </option>
   </component>
   <component name="GOROOT" path="$PROJECT_DIR$/../../go1.14.1" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1atujF8sPcxpe9OOkqGkNUmYUSH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultGoTemplateProperty" value="Go Application" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -48,7 +61,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build func.go">
+  <component name="RunManager" selected="Go Build.go build arrays.go">
+    <configuration name="go build Pointers.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="learnGo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/basics/Pointers.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build arrays.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="learnGo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/basics/arrays.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build branch.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learnGo" />
       <working_directory value="$PROJECT_DIR$/basics" />
@@ -56,26 +83,11 @@
       <filePath value="$PROJECT_DIR$/basics/branch.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build congwang.com/learnGo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="learnGo" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/helloVariable.go" />
-      <package value="congwang.com/learnGo" />
-      <method v="2" />
-    </configuration>
     <configuration name="go build func.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="learnGo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/basics/func.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build helloVariable.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="learnGo" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/basics/helloVariable.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build loop.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -87,23 +99,34 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build branch.go" />
-      <item itemvalue="Go Build.go build congwang.com/learnGo" />
-      <item itemvalue="Go Build.go build helloVariable.go" />
       <item itemvalue="Go Build.go build loop.go" />
       <item itemvalue="Go Build.go build func.go" />
+      <item itemvalue="Go Build.go build Pointers.go" />
+      <item itemvalue="Go Build.go build arrays.go" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build arrays.go" />
+        <item itemvalue="Go Build.go build Pointers.go" />
         <item itemvalue="Go Build.go build func.go" />
         <item itemvalue="Go Build.go build loop.go" />
         <item itemvalue="Go Build.go build branch.go" />
-        <item itemvalue="Go Build.go build helloVariable.go" />
-        <item itemvalue="Go Build.go build congwang.com/learnGo" />
       </list>
     </recent_temporary>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
