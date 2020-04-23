@@ -30,6 +30,7 @@ func swap1(a, b int) (int, int) {
 	return b, a
 }
 
+// 一般操作数组用slice去做
 func swap2(a, b *int) {
 	*a, *b = *b, *a
 }
