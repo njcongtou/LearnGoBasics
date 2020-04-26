@@ -6,9 +6,12 @@ import (
 	"flag"
 	"fmt"
 
+	"k8s.io/apimachinery/pkg/fields"
+
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/apimachinery/pkg/fields"
+	"k8s.io/apimachinery/pkg/util/wait"
+	"k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
@@ -19,12 +22,12 @@ import (
 )
 
 func main() {
+
 	var (
-		kubeconfig *string
-		pod        v1.Pod
+		clientset *kubernetes.Clientset
 	)
 
-	kubeconfig = flag.String("kubeconfig", filepath.Join(os.Getenv("HOME"), ".kube", "config"), "(optional) absolute path to the kubeconfig file")
+	kubeconfig := flag.String("kubeconfig", filepath.Join(os.Getenv("HOME"), ".kube", "config"), "(optional) absolute path to the kubeconfig file")
 	flag.Parse()
 
 	// use the current context in kubeconfig
@@ -33,10 +36,19 @@ func main() {
 		panic(err.Error())
 	}
 
-	clientset, err := kubernetes.NewForConfig(config)
-	if err != nil {
+	if clientset, err = kubernetes.NewForConfig(config); err != nil {
 		panic(err.Error())
 	}
+
+	useInformer(clientset)
+	useNewListWatchFromClient(clientset)
+
+}
+
+func useNewListWatchFromClient(clientset *kubernetes.Clientset) {
+	var (
+		pod v1.Pod
+	)
 
 	podList, err := clientset.CoreV1().Pods("").List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
@@ -48,7 +60,6 @@ func main() {
 		fmt.Printf("Pod %d\n", pod.Status.Phase)
 	}
 
-	// 2. watch for pod delete event
 	watchlist := cache.NewListWatchFromClient(clientset.CoreV1().RESTClient(), "pods", v1.NamespaceDefault,
 		fields.Everything())
 	_, controller := cache.NewInformer(
@@ -72,5 +83,28 @@ func main() {
 	for {
 		time.Sleep(time.Second)
 	}
+}
 
+/*
+	Preferred way to use Informer instead of watcher
+
+*/
+func useInformer(clientset *kubernetes.Clientset) {
+	informerFactory := informers.NewSharedInformerFactory(clientset, time.Second*30)
+	podInformer := informerFactory.Core().V1().Pods()
+	podInformer.Informer().AddEventHandler(cache.ResourceEventHandlerFuncs{
+		AddFunc: func(obj interface{}) {
+			fmt.Printf("add: %s \n", obj)
+		},
+		DeleteFunc: func(obj interface{}) {
+			fmt.Printf("delete: %s \n", obj)
+		},
+		UpdateFunc: func(oldObj, newObj interface{}) {
+			fmt.Printf("old: %s, new: %s \n", oldObj, newObj)
+		},
+	})
+	informerFactory.Start(wait.NeverStop)
+	informerFactory.WaitForCacheSync(wait.NeverStop)
+	pod, _ := podInformer.Lister().Pods(v1.NamespaceDefault).Get("redis-operator-8fb5689b7-rhvqd")
+	fmt.Println(pod.Name)
 }
