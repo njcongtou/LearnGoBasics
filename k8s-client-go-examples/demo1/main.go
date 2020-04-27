@@ -24,7 +24,7 @@ func main() {
 		goto FAIL
 	}
 
-	if podsList, err = clientSet.CoreV1().Pods("").List(context.TODO(), meta_v1.ListOptions{}); err != nil {
+	if podsList, err = clientSet.CoreV1().Pods("default").List(context.TODO(), meta_v1.ListOptions{}); err != nil {
 		goto FAIL
 	}
 

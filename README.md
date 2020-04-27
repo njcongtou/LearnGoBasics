@@ -9,3 +9,5 @@
 * Demo3
 * Demo4
 * Demo5
+* Demo6
+* Demo7 : get logs from POD. same as running command : k logs <pod_id>
