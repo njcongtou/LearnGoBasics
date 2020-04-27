@@ -41,7 +41,7 @@ func main() {
 	}
 
 	useInformer(clientset)
-	useNewListWatchFromClient(clientset)
+	//useNewListWatchFromClient(clientset)
 
 }
 
@@ -105,6 +105,6 @@ func useInformer(clientset *kubernetes.Clientset) {
 	})
 	informerFactory.Start(wait.NeverStop)
 	informerFactory.WaitForCacheSync(wait.NeverStop)
-	pod, _ := podInformer.Lister().Pods(v1.NamespaceDefault).Get("redis-operator-8fb5689b7-rhvqd")
+	pod, _ := podInformer.Lister().Pods(v1.NamespaceDefault).Get("kubia-hbcbk")
 	fmt.Println(pod.Name)
 }
