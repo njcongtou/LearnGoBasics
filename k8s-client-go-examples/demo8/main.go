@@ -25,6 +25,10 @@ func main() {
 	}
 
 	// watch for pod changes.
+	/**
+	Observation:
+	when scaling in/out (delete or add a pod), AddFunc or DeleteFunc is only called once associated with 3 calls to UpdateFunc.
+	*/
 	watchlist := cache.NewListWatchFromClient(clientset.CoreV1().RESTClient(), "pods", v1.NamespaceDefault, fields.Everything())
 	_, controller := cache.NewInformer(
 		watchlist,
