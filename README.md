@@ -11,4 +11,4 @@
 * Demo 5
 * Demo 6
 * Demo 7 : get logs from POD. same as running command : k logs <pod_id>
-* Demo 8 : 
+* Demo 8 : watch for Add, Delete and Update events
